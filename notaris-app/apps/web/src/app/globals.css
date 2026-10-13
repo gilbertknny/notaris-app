@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/instrument-sans';
+@import '@fontsource-variable/source-serif-4';
+
+/*
+  Token: kertas abu dingin, tinta navy, ungu stempel sebagai satu-satunya aksen.
+  Warna status sengaja redup agar stempel tetap yang paling menonjol.
+*/
+@theme {
+  --color-paper: #f4f5f7;
+  --color-sheet: #ffffff;
+  --color-ink: #1c2541;
+  --color-ink-soft: #4a5170;
+  --color-ink-faint: #8a8fa6;
+  --color-rule: #dfe2ea;
+  --color-stamp: #5a3e9e;
+  --color-stamp-soft: #ece8f6;
+  --color-ok: #2f6b4f;
+  --color-ok-soft: #e4f0ea;
+  --color-warn: #8a5a12;
+  --color-warn-soft: #f6eedd;
+  --color-bad: #a23a3a;
+  --color-bad-soft: #f6e4e4;
+
+  --font-sans: 'Instrument Sans Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-deed: 'Source Serif 4 Variable', ui-serif, Georgia, serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-stamp);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Stempel: muncul sekali saat tahap aktif dirender, seperti cap ditekan ke kertas. */
+@keyframes stamp-press {
+  0% { transform: scale(1.35) rotate(-9deg); opacity: 0; }
+  60% { transform: scale(0.96) rotate(-4deg); opacity: 1; }
+  100% { transform: scale(1) rotate(-4deg); opacity: 1; }
+}
+.stamp {
+  animation: stamp-press 420ms cubic-bezier(.2, .8, .3, 1.2) both;
+}
+
+.deed-text {
+  font-family: var(--font-deed);
+  font-size: 16px;
+  line-height: 1.75;
+}
