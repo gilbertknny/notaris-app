@@ -20,6 +20,13 @@ Aplikasi web untuk mengelola siklus berkas kantor Notaris/PPAT: penerimaan klien
 | Portal klien | Login OTP email (tanpa kata sandi), lihat status berkas & tagihan, unggah dokumen dari ponsel |
 | Audit & worker | Log audit append-only (UPDATE/DELETE dicabut di database), riwayat perubahan otomatis via trigger, outbox + worker untuk notifikasi & pemindaian |
 
+## Windows tanpa mengetik perintah
+
+1. Pasang **Docker Desktop**, buka, tunggu sampai tertulis "Engine running".
+2. Klik dua kali **MULAI.bat**. Browser terbuka sendiri ke aplikasi.
+3. Kode MFA staf: **KODE-MFA.bat**. Kode portal klien: **KODE-PORTAL.bat**.
+4. Selesai: **BERHENTI.bat**. Mulai ulang dari data demo: **RESET-DATA.bat**. Ada masalah: **LIHAT-LOG.bat**.
+
 ## Menjalankan dengan Docker (paling cepat)
 
 ```bash
